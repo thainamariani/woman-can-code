@@ -35,7 +35,7 @@ function preencherDados(lista) {
     let itemDaLinhaCrm = document.createElement("td");
     itemDaLinhaCrm.innerHTML = element.crm;
     let itemDaLinhaSpeciality = document.createElement("td");
-    itemDaLinhaSpeciality.innerHTML = element.specialty;
+    itemDaLinhaSpeciality.innerHTML = element.speciality;
     let itemDaLinhaClinc = document.createElement("td");
     itemDaLinhaClinc.innerHTML = element.clinic;
     let itemDaLinhaPhone = document.createElement("td");
@@ -45,7 +45,7 @@ function preencherDados(lista) {
 
     const buttonFav = document.createElement("button");
     buttonFav.addEventListener("click", function () {
-      fetch(`${URL}/${element.id}`, {
+      fetch(`${URL}/${element.id}/favorite`, {
         method: "PATCH",
         body: JSON.stringify({ favorite: !element.favorite }),
         headers: {

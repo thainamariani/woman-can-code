@@ -12,17 +12,20 @@ const createDoctor = async (req, res) => {
 }
 
 const getAllDoctors = async (req, res) => {
-    const favorite = req.query.favorite
-    try{
-        const where = favorite ? { where: { favorite} }: {}
-        const doctors = await Doctor.findAll(where)
-        if (doctors && doctors.length > 0){
+    const { favorite = false } = req.query
+    try {
+        const where = favorite ? { where: { favorite } } : {}
+        const doctors = await Doctor.findAll({
+            where,
+            order: [['id', 'ASC']] // para o inverso trocar ASC por DESC
+        })
+        if (doctors && doctors.length > 0) {
             res.status(200).send(doctors)
         } else {
             res.status(204).send()
         }
     } catch (error) {
-        res.status(500).send({ message: error.message})
+        res.status(500).send({ message: error.message })
     }
 }
 

@@ -6,7 +6,7 @@ router.post("/", controller.createDoctor)
 router.get("/", controller.getAllDoctors)
 router.get("/:id", controller.getDoctor)
 router.put("/:id", controller.updateDoctor)
-router.patch("/:id", controller.updateFavorite)
+router.patch("/:id/favorite", controller.updateFavorite)
 router.delete("/:id", controller.deleteDoctor)
 
 module.exports = router
