@@ -22,14 +22,10 @@
     "@heroku/buildpack-registry": "^1.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "heroku": "^7.59.2",
-    "heroku-cli": "^7.0.9",
-    "node": "^17.1.0",
     "nodemon": "^2.0.12",
     "oclif": "^1.18.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.12.0-alpha.1",
-    "npm": "7.24.0"
+    "sequelize": "^6.12.0-alpha.1"
   }
 }
